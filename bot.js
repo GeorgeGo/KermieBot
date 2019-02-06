@@ -10,10 +10,6 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-async function get_playlists(){
-    return await fs.readdir('./playlists/');
-}
-
 function delete_message(msg) {
     msg.delete(config.delete_timeout);
 }
@@ -39,7 +35,7 @@ client.on('message', async msg => {
 
     if (cmd === 'playlists') {
         msg.delete(config.delete_timeout);
-        playlists = await get_playlists();
+        playlists = await fs.readdir('./playlists/');
         msg.channel.send(playlists).then(delete_message);
     }
 });
