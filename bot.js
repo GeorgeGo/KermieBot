@@ -39,7 +39,7 @@ client.on('message', async msg => {
 
     if (cmd === 'playlists') {
         msg.delete(config.delete_timeout);
-        playlists = await get_playlists();
+        playlists = await fs.readdir('./playlists/');
         msg.channel.send(playlists).then(delete_message);
     }
 });
