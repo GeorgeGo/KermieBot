@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/GeorgeGo/KermieBot#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
+    "poke-types": "^1.0.10"
   }
 }
